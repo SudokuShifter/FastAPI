@@ -60,7 +60,7 @@ async def delete_task(task_id: int):
     if task_id - 1 in range(len(TASKS)):
         if task_id == TASKS[task_id-1].id:
             removed_task = TASKS.pop(task_id-1)
-        return {'delete': removed_task}
+            return {'delete': removed_task}
     raise HTTPException(status_code=404, detail='Task not found')
 
 
